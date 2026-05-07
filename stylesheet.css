@@ -1,0 +1,86 @@
+/* Yuvraj Borade — personal site */
+:root { --bg: #fafaf7; --fg: #1a1a1a; --muted: #555; --rule: #ddd6c8; --rule-soft: #ece6d8; --link: #1772d0; }
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: 18px; color: var(--fg); line-height: 1.55; background: var(--bg); }
+
+.page { max-width: 800px; margin: 0 auto; padding: 64px 32px 80px; }
+
+.mono { font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: #888; }
+.kicker { margin-bottom: 12px; }
+.muted { color: var(--muted); }
+
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid currentColor; }
+a:hover { background: var(--fg); color: var(--bg); border-color: transparent; }
+
+h1 { font-family: 'Newsreader', serif; font-weight: 500; font-size: 44px; letter-spacing: -0.02em; margin: 0 0 4px; line-height: 1.05; }
+h1 em { font-style: italic; font-weight: 400; color: var(--muted); }
+h2 { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #888; margin: 56px 0 20px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+
+p { margin: 0 0 12px; }
+.lede { font-size: 19px; line-height: 1.6; margin-top: 24px; }
+
+.intro-grid { display: grid; grid-template-columns: 1fr 140px; gap: 40px; align-items: start; }
+.avatar { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; filter: grayscale(15%); }
+.links a { margin-right: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
+.links { margin-top: 20px; }
+
+/* Generic two/three-col item with optional thumb */
+.item { display: grid; grid-template-columns: 110px 140px 1fr; gap: 24px; margin: 0 0 24px; align-items: start; }
+.item .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding-top: 6px; }
+.item .thumb { width: 140px; aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; background: #ece6d8; }
+.item .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.item .body .title { font-family: 'Newsreader', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; }
+.item .body .authors { font-size: 14px; color: var(--muted); margin-top: 2px; }
+.item .body .abstract { font-size: 15px; color: #333; margin: 6px 0 0; line-height: 1.5; }
+.item .body .actions { margin-top: 6px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+.item .body .actions a { margin-right: 14px; }
+
+/* Experience: centered card with thumbnail */
+.xp-row { display: grid; grid-template-columns: 140px 1fr; gap: 32px; align-items: center; margin: 0 0 36px; }
+.xp-thumb { width: 140px; aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; background: #ece6d8; }
+.xp-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.xp-body { text-align: center; }
+.xp-role { font-family: 'Newsreader', serif; font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+.xp-place { font-size: 16px; color: #444; margin-top: 4px; }
+.xp-dates { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #666; margin-top: 2px; }
+
+/* Timeline */
+.tl { position: relative; padding-left: 28px; }
+.tl::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 1px; background: var(--rule); }
+.tl-row { position: relative; display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 8px 0 18px; }
+.tl-row::before { content: ''; position: absolute; left: -25px; top: 16px; width: 9px; height: 9px; border-radius: 50%; background: var(--link); box-shadow: 0 0 0 4px var(--bg); }
+.tl-row .meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding-top: 4px; }
+.tl-row .what { font-family: 'Newsreader', serif; font-size: 17px; line-height: 1.45; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: 130px 1fr; gap: 14px 28px; font-size: 15px; margin: 0; }
+.skills dt { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding-top: 3px; }
+.skills dd { margin: 0; color: #333; }
+
+.rule { height: 1px; background: var(--rule-soft); margin: 64px 0 24px; }
+.footer { display: flex; justify-content: space-between; }
+
+@media (max-width: 720px) {
+  .intro-grid { grid-template-columns: 1fr; }
+  .avatar { width: 110px; height: 110px; }
+  .item { grid-template-columns: 1fr; }
+  .item .thumb { width: 120px; }
+  .xp-row { grid-template-columns: 1fr; justify-items: center; }
+  h1 { font-size: 36px; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #16140f; --fg: #e8e3d6; --muted: #aaa28d; --rule: #2a2620; --rule-soft: #2a2620; --link: #f5efdf; }
+  body { background: var(--bg); color: var(--fg); }
+  a { color: var(--link); }
+  a:hover { background: var(--link); color: var(--bg); }
+  h2 { color: #8a836f; }
+  .mono, .item .meta, .tl-row .meta, .skills dt, h2 { color: #8a836f; }
+  .item .thumb, .xp-thumb { background: #2a2620; }
+  .item .body .authors { color: #aaa28d; }
+  .item .body .abstract, .skills dd { color: #ccc6b7; }
+  .xp-place { color: #aaa28d; }
+  .xp-dates { color: #8a836f; }
+}
